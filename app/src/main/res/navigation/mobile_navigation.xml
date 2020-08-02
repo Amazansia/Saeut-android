@@ -14,7 +14,7 @@
     <fragment
         android:id="@+id/navigation_notifications"
         android:name="com.teamtips.android.saeut.ui.schedule.ScheduleFragment"
-        android:label="@string/title_map"
+        android:label="@string/title_schedule"
         tools:layout="@layout/fragment_schedule" />
 
     <fragment
