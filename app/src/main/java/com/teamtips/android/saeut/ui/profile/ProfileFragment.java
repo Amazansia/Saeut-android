@@ -48,11 +48,11 @@ public class ProfileFragment extends Fragment {
         tv2 = root.findViewById(R.id.textView2);
         tv3 = root.findViewById(R.id.textView3);
 
-        // GET방식 예시
+        // GET방식 예시 -> NetworkTask(요청주소, null)
         NetworkTask networkTask = new NetworkTask("http://49.50.173.180:8080/saeut/account/test",null);
         networkTask.execute();
 
-        //POST 방식 예시
+        // POST 방식 예시 -> NetworkTask_POST(요청주소, 데이터)
         JSONObject parameters = new JSONObject();
         //전송 데이터 설정(json)
         try {
@@ -97,10 +97,12 @@ public class ProfileFragment extends Fragment {
             return result;
         }
 
+        // 요청결과 처리
         @Override
         protected void onPostExecute(String s) {
             super.onPostExecute(s);
             try {
+                    // HTTP 통신 결과로 전달받은 값 s를 JSON으로 파싱하여 사용
                     JSONObject object = new JSONObject(s);
                     String id = object.getString("id");
                     String pw = object.getString("password");
@@ -135,9 +137,11 @@ public class ProfileFragment extends Fragment {
             return result;
         }
 
+        // 요청결과 처리
         @Override
         protected void onPostExecute(String s) {
             super.onPostExecute(s);
+            // 결과값 s 사용
             tv3.setText(s);
         }
 
