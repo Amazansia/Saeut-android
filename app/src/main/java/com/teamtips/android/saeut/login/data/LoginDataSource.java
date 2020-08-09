@@ -14,7 +14,7 @@ public class LoginDataSource {
         try {
             // TODO: handle loggedInUser authentication
             LoggedInUser loggedInUser =
-                    new LoggedInUser(getUserId(), getnickname());
+                    new LoggedInUser("1234", "1234");
             return new Result.Success<>(loggedInUser);
         } catch (Exception e) {
             return new Result.Error(new IOException("Error logging in", e));
